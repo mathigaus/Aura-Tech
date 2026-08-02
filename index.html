@@ -78,7 +78,7 @@
     .cw h1 { margin:0; color:inherit; text-shadow:none; letter-spacing:-.055em; font:600 clamp(42px,7vw,75px)/.98 'Playfair Display',serif; } .cw h1 em { color:#56aeca; font-style:italic; }
     .intro p:last-child { max-width:500px; margin:18px 0 0; color:var(--muted); font-size:16px; line-height:1.6; }
     .product-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:15px; padding-bottom:55px; }
-    .category-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; padding-bottom:55px; }
+    .category-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; padding-bottom:55px; max-width:760px; }
     .category-card { position:relative; min-height:245px; display:flex; flex-direction:column; justify-content:flex-end; padding:25px; border:1px solid rgba(255,255,255,.8); border-radius:25px; color:var(--ink); text-align:left; background:var(--glass); box-shadow:0 15px 38px rgba(71,86,96,.09), inset 0 1px 0 white; backdrop-filter:blur(18px); cursor:pointer; transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease; }
     .category-card::before, .product::before { content:''; position:absolute; inset:0; border-radius:inherit; padding:1.3px; background:linear-gradient(155deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.35) 30%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 68%,rgba(255,255,255,.5) 100%); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
     .category-card:hover { transform:translateY(-6px); box-shadow:0 21px 40px rgba(52,86,99,.16),inset 0 1px 0 white; }
@@ -116,7 +116,7 @@
     .whatsapp-btn { margin-top:auto; padding:14px 18px; border-radius:14px; color:white; background:#25d366; text-align:center; text-decoration:none; font-size:14px; font-weight:700; transition:filter .2s,transform .15s ease; border:0; cursor:pointer; } .whatsapp-btn:hover { filter:brightness(.94); } .whatsapp-btn:active { transform:scale(.96); }
     .cw footer { padding:23px 0 35px; border-top:1px solid var(--line); color:#718088; font-size:12px; text-align:center; }
     .empty-note { grid-column:1/-1; text-align:center; padding:50px 10px; color:var(--muted); font-size:14px; }
-    @media(max-width:950px) { .product-grid { grid-template-columns:repeat(3,1fr); } .category-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:950px) { .product-grid { grid-template-columns:repeat(3,1fr); } }
     @media(max-width:600px) { .cw header { padding-bottom:38px; } .product-grid { grid-template-columns:repeat(2,1fr); gap:11px; } .category-grid { grid-template-columns:1fr; } .category-card { min-height:170px; } .info { padding:12px; } .detail { grid-template-columns:1fr; overflow:auto; } .detail-image { min-height:240px; } .detail-copy { padding:24px; } #detail-category { margin-top:16px; } .catalog-toolbar { width:100%; margin-left:0; } .catalog-toolbar input[type="search"] { flex:1; min-width:0; } .modal-close { width:44px; height:44px; font-size:26px; } .catalog-heading button { padding:12px 17px; font-size:14.5px; } }
 
     /* ============ ADMIN ============ */
@@ -128,7 +128,7 @@
     .pin-card { width:min(360px,100%); padding:31px; border:1px solid rgba(148,163,184,.25); border-radius:22px; background:rgba(15,23,42,.88); box-shadow:0 24px 70px rgba(0,0,0,.35); text-align:center; }
     .pin-lock { display:grid; width:48px; height:48px; margin:0 auto 16px; place-items:center; border-radius:14px; background:rgba(88,197,246,.14); color:var(--blue); font-size:21px; }
     .pin-card h2 { margin:0; font-size:21px; color:#fff; } .pin-card p { margin:8px 0 20px; color:#94a3b8; font-size:13px; line-height:1.45; }
-    .pin-card input { width:100%; padding:13px; border:1px solid #334155; border-radius:10px; background:#0b1120; color:white; font:600 20px/1 Inter,sans-serif; letter-spacing:.3em; text-align:center; outline:none; }
+    .pin-card input { width:100%; padding:13px; border:1px solid #334155; border-radius:10px; background:#0b1120; color:white; font:500 15px/1 Inter,sans-serif; text-align:left; outline:none; }
     .pin-card input:focus { border-color:var(--blue); } .pin-card button { width:100%; margin-top:12px; padding:12px; border:0; border-radius:10px; background:var(--blue); color:#071017; font-weight:700; cursor:pointer; }
     .pin-error { min-height:17px; margin:9px 0 -4px; color:#fb7185; font-size:12px; }
     .layer-back { position:absolute; z-index:2; top:17px; right:17px; border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:10px 16px; background:rgba(15,23,42,.84); color:white; font-size:13px; font-weight:600; cursor:pointer; }
@@ -149,7 +149,7 @@
     <section class="center">
       <p class="eyebrow">TU TECNOLOGÍA, ESTILO Y MÁS — TODO ORIGINAL</p>
       <h1>Aura &amp; Tech.</h1>
-      <p class="subtitle">Celulares, perfumes y vapes originales. Elegí lo que buscás y coordinamos tu pedido por WhatsApp.</p>
+      <p class="subtitle">Celulares y perfumes originales. Elegí lo que buscás y coordinamos tu pedido por WhatsApp.</p>
       <button class="catalog-button" id="open-catalog">Ver catálogo <span class="arrow">→</span></button>
     </section>
     <div class="bottom-copy"><p>Ofrecemos productos importados de alta calidad con garantía y atención personalizada vía WhatsApp.</p><p>100+ Clientes satisfechos !</p></div>
@@ -160,7 +160,6 @@
     <p class="menu-label">AURA &amp; TECH</p>
     <a href="#" class="category-link" data-category="Celulares">Celulares</a>
     <a href="#" class="category-link" data-category="Perfumes">Perfumes</a>
-    <a href="#" class="category-link" data-category="Vapes">Vapes</a>
     <button class="menu-catalog" id="menu-catalog">Ver catálogo</button>
     <a class="menu-whatsapp" href="https://wa.me/595991823579" target="_blank" rel="noopener">Hablar por WhatsApp</a>
   </nav>
@@ -176,7 +175,6 @@
           <section class="category-grid" id="category-grid" aria-label="Categorías del catálogo">
             <button class="category-card" data-category="Celulares"><img class="category-photo" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Celulares"><strong>Celulares</strong><small>Ver opciones disponibles</small></button>
             <button class="category-card" data-category="Perfumes"><img class="category-photo" src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Perfumes"><strong>Perfumes</strong><small>Ver opciones disponibles</small></button>
-            <button class="category-card" data-category="Vapes"><img class="category-photo" src="https://unsplash.com/photos/PeAkpMKQDLE/download?force=true&amp;w=900" alt="Vapes"><strong>Vapes</strong><small>Ver opciones disponibles</small></button>
           </section>
           <div class="catalog-heading" id="catalog-heading">
             <button id="back-categories">← Categorías</button>
@@ -218,8 +216,9 @@
       <form class="pin-card" id="admin-form">
         <div class="pin-lock">🔒</div>
         <h2>Acceso administrativo</h2>
-        <p>Ingresá tu PIN para abrir el dashboard.</p>
-        <input id="admin-pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" aria-label="PIN de administración" placeholder="••••">
+        <p>Iniciá sesión con tu cuenta para abrir el dashboard.</p>
+        <input id="admin-email" type="email" autocomplete="username" aria-label="Correo electrónico" placeholder="Correo electrónico" style="margin-bottom:9px;">
+        <input id="admin-password" type="password" autocomplete="current-password" aria-label="Contraseña" placeholder="Contraseña">
         <div class="pin-error" id="pin-error"></div>
         <button type="submit">Ingresar al dashboard</button>
       </form>
@@ -239,7 +238,8 @@
             <button onclick="showTab('finances')" id="nav-finances" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/50 transition-all"><i class="fa-solid fa-wallet w-5"></i> Finanzas</button>
           </nav>
         </div>
-        <div class="pt-4 border-t border-slate-700/60 mt-6">
+        <div class="pt-4 border-t border-slate-700/60 mt-6 space-y-1.5">
+          <button onclick="adminLogout()" class="w-full text-xs text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
           <button onclick="resetData()" class="w-full text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-950/30 py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all"><i class="fa-solid fa-rotate-left"></i> Vaciar Historial de Pedidos</button>
         </div>
       </aside>
@@ -278,7 +278,6 @@
               <select id="p-category" required class="bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
                 <option value="Celulares">Celulares</option>
                 <option value="Perfumes">Perfumes</option>
-                <option value="Vapes">Vapes</option>
               </select>
               <input type="number" step="1" min="0" id="p-price" placeholder="Precio (Gs)" required class="bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
               <input type="number" step="1" min="0" id="p-stock" placeholder="Cantidad Stock" required class="bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
@@ -345,24 +344,72 @@
     </div>
   </section>
 
+  <!-- Firebase (base de datos en la nube). Configurá tu proyecto en el bloque de código principal, más abajo. -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
   <script>
     /* =========================================================
-       DATOS COMPARTIDOS (localStorage) — usados por Catálogo y Admin
+       FIREBASE — pegá acá la configuración de TU proyecto.
+       La conseguís en: Firebase Console → ⚙️ Configuración del proyecto
+       → "Tus apps" → app web → "Config".
+    ========================================================= */
+    const firebaseConfig = {
+      apiKey: "AIzaSyDy6-iEvkMYJyu6pAOpZWh4bk0VIe2W9FE",
+      authDomain: "aura-tech-7369a.firebaseapp.com",
+      projectId: "aura-tech-7369a",
+      storageBucket: "aura-tech-7369a.firebasestorage.app",
+      messagingSenderId: "1012502118236",
+      appId: "1:1012502118236:web:4afe4b7446f03e2beb0b99"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const productsCol = db.collection('products');
+    const ordersCol = db.collection('orders');
+
+    /* =========================================================
+       DATOS COMPARTIDOS (Firestore) — usados por Catálogo y Admin.
+       cachedProducts/cachedOrders se mantienen actualizados solos
+       en tiempo real gracias a onSnapshot: si vos (o alguien más
+       con acceso al panel) cambia algo desde otro dispositivo, se
+       refleja acá al instante, sin recargar la página.
     ========================================================= */
     const WHATSAPP_NUMBER = '595991823579';
-    const ADMIN_PIN = '1234'; // Cambiá este PIN antes de publicar tu página.
 
-    function getProducts() { try { return JSON.parse(localStorage.getItem('aura_products')) || []; } catch(e) { return []; } }
-    function getOrders() { try { return JSON.parse(localStorage.getItem('aura_orders')) || []; } catch(e) { return []; } }
+    let cachedProducts = [];
+    let cachedOrders = [];
+    function getProducts() { return cachedProducts; }
+    function getOrders() { return cachedOrders; }
 
-    function saveProducts(products) {
-      try { localStorage.setItem('aura_products', JSON.stringify(products)); renderAll(); renderCatalogIfVisible(); return true; }
-      catch (err) { alert('No se pudo guardar: el almacenamiento del navegador está lleno. Probá con una imagen más liviana o eliminá productos que ya no uses.'); return false; }
+    productsCol.onSnapshot(snapshot => {
+      cachedProducts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      renderAll();
+      renderCatalogIfVisible();
+    }, err => console.error('Error leyendo productos de Firestore:', err));
+
+    // Los pedidos son datos sensibles (nombre/teléfono de clientes), así que
+    // esta lectura solo se activa una vez que hay una sesión real iniciada.
+    let ordersListenerAttached = false;
+    function attachOrdersListenerOnce() {
+      if (ordersListenerAttached) return;
+      ordersListenerAttached = true;
+      ordersCol.orderBy('date', 'desc').onSnapshot(snapshot => {
+        cachedOrders = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        renderAll();
+      }, err => console.error('Error leyendo pedidos de Firestore:', err));
     }
-    function saveOrders(orders) {
-      try { localStorage.setItem('aura_orders', JSON.stringify(orders)); renderAll(); return true; }
-      catch (err) { alert('No se pudo guardar el pedido: almacenamiento lleno.'); return false; }
-    }
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        adminView.classList.add('logged-in');
+        attachOrdersListenerOnce();
+        renderAll();
+      } else {
+        adminView.classList.remove('logged-in');
+        cachedOrders = [];
+      }
+    });
 
     function formatGs(n) { return 'Gs. ' + Math.round(Number(n) || 0).toLocaleString('es-PY'); }
     function escapeHtml(s) { return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -425,17 +472,30 @@
     document.querySelector('#return-home').addEventListener('click', () => catalogView.classList.remove('open'));
 
     document.querySelector('#admin-access').addEventListener('click', () => {
-      document.querySelector('#admin-pin').value = '';
-      document.querySelector('#pin-error').textContent = '';
-      adminView.classList.remove('logged-in');
       adminView.classList.add('open');
-      document.querySelector('#admin-pin').focus();
+      if (!firebase.auth().currentUser) {
+        document.querySelector('#admin-email').value = '';
+        document.querySelector('#admin-password').value = '';
+        document.querySelector('#pin-error').textContent = '';
+        document.querySelector('#admin-email').focus();
+      }
     });
-    document.querySelector('#admin-form').addEventListener('submit', e => {
+    document.querySelector('#admin-form').addEventListener('submit', async e => {
       e.preventDefault();
-      if (document.querySelector('#admin-pin').value === ADMIN_PIN) { adminView.classList.add('logged-in'); renderAll(); }
-      else { document.querySelector('#pin-error').textContent = 'PIN incorrecto.'; }
+      document.querySelector('#pin-error').textContent = '';
+      const email = document.querySelector('#admin-email').value.trim();
+      const password = document.querySelector('#admin-password').value;
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email, password);
+        // onAuthStateChanged (más abajo) se encarga de mostrar el dashboard.
+      } catch (err) {
+        document.querySelector('#pin-error').textContent = 'Correo o contraseña incorrectos.';
+      }
     });
+    function adminLogout() {
+      firebase.auth().signOut();
+      adminView.classList.remove('open');
+    }
     document.querySelector('#admin-close').addEventListener('click', () => adminView.classList.remove('open'));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') { menu.classList.remove('open'); catalogView.classList.remove('open'); adminView.classList.remove('open'); document.querySelector('#modal').classList.remove('open'); } });
 
@@ -501,8 +561,10 @@
         stockBadge.innerHTML = `<span class="stock-dot out"></span> Sin stock por el momento`;
         stockBadge.classList.add('out-of-stock');
       }
-      document.querySelector('#whatsapp-link').onclick = () => {
-        const order = createOrderFromProduct(p);
+      document.querySelector('#whatsapp-link').onclick = async () => {
+        let order;
+        try { order = await createOrderFromProduct(p); }
+        catch (err) { alert('No se pudo registrar el pedido. Revisá tu conexión a internet e intentá de nuevo.'); return; }
         const text = `👋 *NUEVO PEDIDO - Aura & Tech*\n\n` +
                      `📦 *Producto:* ${p.name}\n` +
                      `🏷️ *Categoría:* ${p.category}\n` +
@@ -513,12 +575,10 @@
       };
       modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
     }
-    function createOrderFromProduct(p) {
-      const orders = getOrders();
-      const order = { id: `ORD-${Date.now().toString().slice(-6)}`, customer: 'Cliente vía WhatsApp', items: `1x ${p.name}`, total: Number(p.price) || 0, status: 'Pendiente', date: new Date().toISOString() };
-      orders.push(order);
-      saveOrders(orders);
-      return order;
+    async function createOrderFromProduct(p) {
+      const payload = { customer: 'Cliente vía WhatsApp', items: `1x ${p.name}`, total: Number(p.price) || 0, status: 'Pendiente', date: new Date().toISOString() };
+      const docRef = await ordersCol.add(payload);
+      return { id: docRef.id, ...payload };
     }
     categoryGrid.addEventListener('click', e => { const card = e.target.closest('[data-category]'); if (card) showCategory(card.dataset.category); });
     document.querySelector('#back-categories').addEventListener('click', showCategories);
@@ -564,7 +624,7 @@
       document.getElementById('kpi-profit').textContent = formatGs(totalSales * 0.30);
 
       const recentOrdersTable = document.getElementById('dash-recent-orders');
-      recentOrdersTable.innerHTML = orders.slice(-3).reverse().map(o => `
+      recentOrdersTable.innerHTML = orders.slice(0, 3).map(o => `
         <tr class="border-b border-slate-700/40">
           <td class="p-2.5 font-mono text-xs text-indigo-400 font-semibold">${o.id}</td>
           <td class="p-2.5">${escapeHtml(o.customer)}</td>
@@ -598,7 +658,7 @@
         </tr>`).join('') : `<tr><td colspan="7" class="p-3 text-xs text-slate-500 italic">Todavía no cargaste productos.</td></tr>`;
 
       const ordersTable = document.getElementById('orders-table-body');
-      ordersTable.innerHTML = orders.length ? orders.slice().reverse().map(o => `
+      ordersTable.innerHTML = orders.length ? orders.map(o => `
         <tr class="border-b border-slate-700/40 hover:bg-slate-700/20 transition-colors">
           <td class="p-3 font-mono text-xs text-indigo-400 font-semibold">${o.id}</td>
           <td class="p-3 font-medium text-white">${escapeHtml(o.customer)}</td>
@@ -669,7 +729,6 @@
 
     document.getElementById('add-product-form').addEventListener('submit', async function handleProductSubmit(e) {
       e.preventDefault();
-      const products = getProducts();
       const editingId = document.getElementById('editing-id').value;
       const payload = {
         name: document.getElementById('p-name').value.trim(),
@@ -680,41 +739,42 @@
         description: document.getElementById('p-description').value.trim(),
         image: imgPreview.dataset.current || ''
       };
-      let ok;
-      if (editingId) {
-        const idx = products.findIndex(p => p.id === editingId);
-        if (idx > -1) products[idx] = { ...products[idx], ...payload };
-        ok = saveProducts(products);
-      } else {
-        payload.id = `PROD-${Date.now().toString().slice(-6)}`;
-        products.push(payload);
-        ok = saveProducts(products);
+      try {
+        if (editingId) { await productsCol.doc(editingId).update(payload); }
+        else { await productsCol.add(payload); }
+        resetProductForm();
+      } catch (err) {
+        alert('No se pudo guardar en la base de datos. Revisá tu conexión a internet e intentá de nuevo.');
       }
-      if (ok) resetProductForm();
     });
 
-    function deleteProduct(id) {
-      if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        const products = getProducts().filter(p => p.id !== id);
-        saveProducts(products);
-      }
+    async function deleteProduct(id) {
+      if (!confirm('¿Estás seguro de que deseas eliminar este producto?')) return;
+      try { await productsCol.doc(id).delete(); }
+      catch (err) { alert('No se pudo eliminar el producto. Revisá tu conexión a internet.'); }
     }
-    function updateOrderStatus(id, newStatus) {
-      const orders = getOrders();
-      const order = orders.find(o => o.id === id);
-      if (order) { order.status = newStatus; saveOrders(orders); }
+    async function updateOrderStatus(id, newStatus) {
+      try { await ordersCol.doc(id).update({ status: newStatus }); }
+      catch (err) { alert('No se pudo actualizar el estado del pedido. Revisá tu conexión a internet.'); }
     }
-    function resetData() {
-      if (confirm('¿Seguro que querés vaciar el historial de pedidos? Los productos del inventario no se van a borrar.')) {
-        localStorage.setItem('aura_orders', JSON.stringify([]));
-        renderAll();
+    async function resetData() {
+      if (!confirm('¿Seguro que querés vaciar el historial de pedidos? Los productos del inventario no se van a borrar.')) return;
+      try {
+        const snapshot = await ordersCol.get();
+        const batch = db.batch();
+        snapshot.docs.forEach(doc => batch.delete(doc.ref));
+        await batch.commit();
+      } catch (err) {
+        alert('No se pudo vaciar el historial. Revisá tu conexión a internet.');
       }
     }
 
     /* =========================================================
        INICIALIZACIÓN
+       (no hace falta llamar renderAll acá: los listeners de
+       Firestore de arriba ya renderizan apenas llega la primera
+       tanda de datos)
     ========================================================= */
-    window.onload = function () { renderAll(); };
   </script>
 </body>
 </html>
